@@ -1,0 +1,15 @@
+doctrine:
+    dbal:
+        url: '%env(resolve:DATABASE_URL)%'
+        charset: utf8mb4
+        server_version: '8.0'
+    orm:
+        auto_generate_proxy_classes: true
+        enable_lazy_ghost_objects: true
+        mappings:
+            OrderInfraDoctrine:
+                is_bundle: false
+                type: attribute
+                dir: '%kernel.project_dir%/src/Order/Infrastructure/Persistence/Doctrine'
+                prefix: 'App\Order\Infrastructure\Persistence\Doctrine'
+                alias: 'OrderInfraDoctrine'
