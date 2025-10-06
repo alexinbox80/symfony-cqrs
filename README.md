@@ -45,7 +45,7 @@ docker compose exec php bin/console doctrine:migrations:migrate -n
 Переменные окружения (в `.env.local`):
 ```
 DATABASE_URL="postgresql://cqrs:cqrs-password@symfony-cqrs_postgres:5432/cqrs?serverVersion=16&charset=utf8"
-MESSENGER_TRANSPORT_DSN=amqp://guest:guest@rabbitmq:5672/%2f/messages
+MESSENGER_TRANSPORT_DSN=amqp://guest:guest@symfony-cqrs_rabbitmq:5672/%2f/messages
 ```
 
 Запуск воркера:
