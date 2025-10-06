@@ -36,11 +36,11 @@ services:
     symfony-cqrs_postgres:
         image: postgres:${POSTGRES_VERSION:-16}-alpine
         container_name: symfony-cqrs_postgres
+        restart: always
         environment:
-            POSTGRES_DB: ${POSTGRES_DB:-app}
-            # You should definitely change the password in production
-            POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-!ChangeMe!}
-            POSTGRES_USER: ${POSTGRES_USER:-app}
+            POSTGRES_DB: 'cqrs'
+            POSTGRES_USER: 'cqrs'
+            POSTGRES_PASSWORD: 'cqrs-password'
         ports:
             - "5432:5432"
         healthcheck:
